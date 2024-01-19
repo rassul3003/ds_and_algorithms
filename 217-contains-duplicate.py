@@ -2,20 +2,16 @@
 # and return false if every element is distinct.
 
 # Example 1:
-
 # Input: nums = [1,2,3,1]
 # Output: true
 
 # Example 2:
-
 # Input: nums = [1,2,3,4]
 # Output: false
 
 # Example 3:
-
 # Input: nums = [1,1,1,3,3,4,3,2,4,2]
 # Output: true
-
 
 nums = [1,2,3,1]
 
@@ -66,8 +62,8 @@ def containsDuplicate(nums):
         return False
     return True
 
-print(containsDuplicate_bruteforce(nums))
-print(containsDuplicate_sorting(nums))
-print(containsDuplicate_hashset(nums))
-print(containsDuplicate_hashmap(nums))
-print(containsDuplicate(nums))
+print('Using bruteforce -', containsDuplicate_bruteforce(nums))
+print('Using sorting -', containsDuplicate_sorting(nums))
+print('Using hashset -', containsDuplicate_hashset(nums))
+print('Using hashmap -', containsDuplicate_hashmap(nums))
+print('Using set -', containsDuplicate(nums))
