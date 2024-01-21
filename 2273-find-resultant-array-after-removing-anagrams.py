@@ -37,18 +37,23 @@
 words = ["abba","baba","bbaa","cd","cd"]
 
 def removeAnagrams_bruteforce(words):
-    for i in range(len(words)-1):
-        for j in range(i+1, len(words)):
-            if words[i] == words[j]:
-                return (i,j)
-    return False
+    # instantiate a list to store the resultant non-anagrams
+    result = []
+    previous = []
 
+    for i in range(len(words)):
+        # store the word
+        word = words[i]
+
+        s_word = sorted(word)
+        
+        # compare the sorted word with the 'previous' list
+        if s_word != previous:
+            result.append(word)
+            previous = s_word
+    return result  
 
 print(removeAnagrams_bruteforce(words))
-
-
-
-
 
 
 
