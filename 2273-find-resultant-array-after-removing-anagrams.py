@@ -45,6 +45,7 @@ def removeAnagrams_bruteforce(words):
         # store the word
         word = words[i]
 
+        # store the sorted version of strings
         s_word = sorted(word)
         
         # compare the sorted word with the 'previous' list
