@@ -59,9 +59,9 @@ def twoSum_dictionary(nums, target):
     return []    
 
 
-
+# Time Complexity O(n)
 def twoSum(nums, target):
-
+    # the same as previous method, but with one interation only
     numsDict = {}
 
     for i in range(len(nums)):
@@ -73,8 +73,6 @@ def twoSum(nums, target):
 
     return []
         
-
-
 
 
 print('Using bruteforce -', twoSum_bruteforce(nums, target))
