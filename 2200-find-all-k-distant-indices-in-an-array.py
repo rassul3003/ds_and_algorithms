@@ -39,14 +39,32 @@ nums = [3,4,9,1,3,9,5]
 key = 9
 k = 1
 
-# Time Complexity O(n)
-def findKDistantIndices(nums, key, k):
-    idx = []
-    for i in range(len(nums)):
-        if nums[i] == key:
-            idx.append(i)
-    
+# Time Complexity O(n^2)
+def findKDistantIndices_bruteforce(nums, key, k):
+    indices = []
+    for idx, val in enumerate(nums):
+        if val == key:
+            indices.append(idx)
+
     res = []
 
+    for i in range(len(nums)):
+        for j in indices:
+            if abs(i-j) <= k:
+                res.append(i)
 
-print(findKDistantIndices(nums, key, k))
+    return res
+
+
+# Time Complexity O(n)
+def findKDistantIndices_set(nums, key, k):
+    indices = set()
+    for idx, val in enumerate(nums):
+        if val == key:
+            indices.update(range(max(0, idx-k), min(len(nums), idx+k+1)))
+
+    return list(indices)
+
+
+print('Using bruteforce -', findKDistantIndices_bruteforce(nums, key, k))
+print('Using set -', findKDistantIndices_set(nums, key, k))
