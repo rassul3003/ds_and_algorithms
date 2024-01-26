@@ -43,7 +43,7 @@ def minimumOperations(nums):
 
 # Time Complexity O(n)
 def minimumOperations2(nums):
-     # subtract from the 'nums' set the 0 set (it has only 0). In case nums doesn't have 0 in the set, it will not affect the result
+     # subtract the 0 set (it has only 0) from the 'nums' set. In case 'nums' doesn't have 0 in the set, it will not affect the result.
      return len(set(nums) - {0})
 
 
