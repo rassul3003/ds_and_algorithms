@@ -48,5 +48,9 @@ def arithmeticTriplets_bruteforce(nums, diff):
                     count += 1
 
     return count    
+
+
+def arithmeticTriplets_(nums, diff):
+    count = 0
    
 print(arithmeticTriplets_bruteforce(nums, diff))
