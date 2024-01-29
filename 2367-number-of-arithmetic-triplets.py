@@ -40,17 +40,26 @@ diff = 3
 
 # Time Complexity O(n^3)
 def arithmeticTriplets_bruteforce(nums, diff):
-    count = 0
+    cnt = 0
     for i in range(len(nums)-2):
         for j in range(i+1, len(nums)-1):
             for k in range(j+1, len(nums)):
                 if nums[j] - nums[i] == diff and nums[k] - nums[j] == diff:
-                    count += 1
+                    cnt += 1
 
-    return count    
+    return cnt    
 
 
-def arithmeticTriplets_(nums, diff):
-    count = 0
+def arithmeticTriplets_set(nums, diff):
+    cnt = 0
+    seen = set()
+    for num in nums:
+        if num - diff in seen and num - diff * 2 in seen:
+            cnt += 1
+        seen.add(num)
+
+    return cnt
    
-print(arithmeticTriplets_bruteforce(nums, diff))
+
+print('Using bruteforce -', arithmeticTriplets_bruteforce(nums, diff))
+print('Using set -', arithmeticTriplets_set(nums, diff))
