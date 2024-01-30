@@ -34,7 +34,7 @@ Constraints:
 
 nums = [4,4,2,4,3]
 
-def unequalTriplets(nums):
+def unequalTriplets_bruteforce(nums):
     cnt = 0
     for i in range(len(nums)-2):
         firstNum = nums[i]
@@ -47,4 +47,4 @@ def unequalTriplets(nums):
 
     return cnt
 
-print(unequalTriplets(nums))
+print('Using bruteforce -', unequalTriplets_bruteforce(nums))
