@@ -36,6 +36,7 @@ Constraints:
 arr = [3,0,1,1,9,7]
 a, b, c = 7, 2, 3
 
+# Time Complexity O(n^3)
 def countGoodTriplets_bruteforce(arr, a, b, c):
     cnt = 0
     for i in range(len(arr)-2):
