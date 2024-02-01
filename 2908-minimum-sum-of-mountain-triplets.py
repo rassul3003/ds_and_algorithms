@@ -55,6 +55,6 @@ def minimumSum(nums):
                     minSum = nums[i] + nums[j] + nums[k]
                     sums.append(minSum)
 
-    return min(sums) if min(sums) else -1
+    return min(sums) if len(sums) != 0 else -1
 
 print(minimumSum(nums))
