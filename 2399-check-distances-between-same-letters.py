@@ -43,14 +43,30 @@ s = "abaccb"
 distance = [1,3,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 
-# Time Complexity - ?
-def checkDistances(s, distance):
-    myDistance = []
-    seen = {}
-    for idx, char in enumerate(s):
-        if char not in seen:
-            seen[char] = idx
+# Time Complexity - O(n^2)
+def checkDistances_bruteforce(s, distance):
+    for i in range(len(s)-1):
+        for j in range(i+1,len(s)):
+            if s[i] == s[j]:
+                if distance[ord(s[i])-97] != j - i -1:
+                    return False
+                else:
+                    break
+            
+    return True
 
-    return seen
 
-print(checkDistances(s, distance))
+# def checkDistances_dict(s, distance):
+#     chars = {}
+#     for i in range(len(s)):
+#         if s[i] not in chars:
+#             chars[s[i]] = i
+#         else:
+#             if distance[ord(s[i]) - 97] != i - chars[s[i]] - 1:
+#                 return False
+#             else:
+#                 break
+#     return True
+
+print(checkDistances_bruteforce(s, distance))
+#print(checkDistances_dict(s, distance))
