@@ -68,5 +68,5 @@ def checkDistances_bruteforce(s, distance):
 #                 break
 #     return True
 
-print(checkDistances_bruteforce(s, distance))
+print('Using bruteforce -', checkDistances_bruteforce(s, distance))
 #print(checkDistances_dict(s, distance))

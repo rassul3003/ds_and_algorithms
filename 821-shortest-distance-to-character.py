@@ -32,7 +32,7 @@ s = "loveleetcode"
 c = "e"
 
 # Time Complexity O()
-def shortestToChar(s, c):
+def shortestToChar_bruteforce(s, c):
     n = len(s)
     dists = [] * n
     for idx, char in enumerate(s):
@@ -42,4 +42,4 @@ def shortestToChar(s, c):
 
     return dists
 
-print(shortestToChar(s, c))
+print('Using bruteforce -', shortestToChar_bruteforce(s, c))
