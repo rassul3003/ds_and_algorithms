@@ -28,9 +28,22 @@ Constraints:
 strs[i] consists of lowercase English letters.
 """
 
+strs = ["eat","tea","tan","ate","nat","bat"]
+
+
+# Time Complexity O(nlogn)
 def groupAnagrams(strs):
-    sortedStrs = []
-    result = []
+    groupedStrs = {}
     for word in strs:
-        for char in word:
+        sortedWord = ''.join(sorted(word))
+
+        if sortedWord not in groupedStrs:
+            groupedStrs[sortedWord] = [word]
+
+        else:
+            groupedStrs[sortedWord].append(word)
+
+    return list(groupedStrs.values())
+
+print(groupAnagrams(strs))
             
